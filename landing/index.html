@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack — Telemetría Ambiental Ciudadana & Gestión Inteligente de Residuos</title>
+    <meta name="description" content="EcoTrack es una plataforma móvil nativa con arquitectura Lean Mobile y Firebase para el reporte y geolocalización de incidentes ambientales y puntos limpios de reciclaje en tiempo real.">
+    
+    <!-- Open Graph / Meta Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EcoTrack — Telemetría Ambiental Ciudadana">
+    <meta property="og:description" content="Monitoreo ecológico colaborativo, geolocalización de residuos y sincronización sub-segundo con Kotlin y Firebase.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&auto=format&fit=crop&q=80">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Ambient Glow Effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="brand-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Eco<span>Track</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#simulador" class="nav-link">Simulador Móvil</a>
+                <a href="#caracteristicas" class="nav-link">Características</a>
+                <a href="#calculadora" class="nav-link">Calculadora de Impacto</a>
+                <a href="#arquitectura" class="nav-link">Arquitectura Cloud</a>
+                <a href="#semillero" class="nav-link">Semillero UCN</a>
+                <a href="#faq" class="nav-link">Preguntas</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                    </svg>
+                </button>
+                <a href="#simulador" class="btn btn-primary btn-sm" id="btn-demo-nav">Probar Demo</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-pulse"></span>
+                        <span class="badge-text">Investigación UCN · Ingeniería Lean Mobile</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Telemetría Ambiental Ciudadana &amp; <span class="gradient-text">Gestión Inteligente de Residuos</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Empodera a las comunidades urbanas para geolocalizar, reportar anomalías ecológicas y descubrir puntos limpios de reciclaje en menos de <strong>30 segundos</strong>, con sincronización cloud sub-segundo sin barreras burocráticas.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#simulador" class="btn btn-primary btn-glow" id="btn-hero-simulator">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                                <path d="M12 18h.01"/>
+                            </svg>
+                            Interactuar con el Simulador
+                        </a>
+                        <a href="#arquitectura" class="btn btn-secondary" id="btn-hero-architecture">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                            Ver Arquitectura Técnica
+                        </a>
+                    </div>
+
+                    <!-- Hero Quick Metrics Bar -->
+                    <div class="hero-metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-value">&lt; 30s</div>
+                            <div class="metric-label">Tiempo de Reporte</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">+65%</div>
+                            <div class="metric-label">Reducción de Abandono</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Serverless &amp; Reactivo</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0 Costos</div>
+                            <div class="metric-label">Fijos de Servidor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Device Preview -->
+                <div class="hero-visual" id="simulador">
+                    <div class="phone-frame-wrapper">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <!-- In-App Header -->
+                            <div class="app-header">
+                                <div class="app-status-bar">
+                                    <span>09:41</span>
+                                    <div class="status-bar-icons">
+                                        <span>5G</span>
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                                <div class="app-top-bar">
+                                    <div class="app-brand-info">
+                                        <div class="app-title">Panel EcoTrack</div>
+                                        <div class="app-citizen-tag">Ciudadano: ciudadano@ucn.edu.co</div>
+                                    </div>
+                                    <button class="app-icon-btn" id="sim-btn-refresh" title="Refrescar datos">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                            <path d="M3 3v5h5"/>
+                                            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                                            <path d="M16 21h5v-5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- App Navigation Tabs inside phone -->
+                                <div class="sim-tab-bar">
+                                    <button class="sim-tab active" data-tab="feed">Feed en Vivo</button>
+                                    <button class="sim-tab" data-tab="create">+ Nuevo Reporte</button>
+                                    <button class="sim-tab" data-tab="login">Acceso</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen 1: Feed Tab -->
+                            <div class="sim-screen-view active" id="sim-view-feed">
+                                <!-- Filter Chips -->
+                                <div class="sim-filter-chips" id="sim-filters">
+                                    <button class="sim-chip active" data-category="Todos">Todos</button>
+                                    <button class="sim-chip" data-category="Puntos de Reciclaje">Puntos de Reciclaje</button>
+                                    <button class="sim-chip" data-category="Vertedero Ilegal">Vertedero Ilegal</button>
+                                    <button class="sim-chip" data-category="Residuos Electrónicos">E-Waste</button>
+                                    <button class="sim-chip" data-category="Compost Orgánico">Orgánico</button>
+                                </div>
+
+                                <!-- Interactive Reports Feed -->
+                                <div class="sim-reports-feed" id="sim-reports-list">
+                                    <!-- Dynamic Cards Injected via JS -->
+                                </div>
+
+                                <!-- Live Notification Toast inside Phone -->
+                                <div class="sim-toast" id="sim-toast">¡Sincronizado con Cloud Firestore!</div>
+                            </div>
+
+                            <!-- Screen 2: Create Report Tab -->
+                            <div class="sim-screen-view" id="sim-view-create">
+                                <div class="sim-create-form">
+                                    <div class="sim-form-banner">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="banner-icon">
+                                            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+                                        </svg>
+                                        <span>Tu reporte se sincronizará en tiempo real con brigadas comunitarias.</span>
+                                    </div>
+
+                                    <div class="sim-form-group">
+                                        <label>Título del Reporte</label>
+                                        <input type="text" id="sim-input-title" placeholder="Ej: Contenedor de plástico lleno" value="Baterías y E-Waste Comunitario">
+                                    </div>
+
+                                    <div class="sim-form-group">
+                                        <label>Categoría</label>
+                                        <select id="sim-select-category">
+                                            <option value="Puntos de Reciclaje">Puntos de Reciclaje</option>
+                                            <option value="Vertedero Ilegal">Vertedero Ilegal</option>
+                                            <option value="Residuos Electrónicos" selected>Residuos Electrónicos</option>
+                                            <option value="Basura General">Basura General</option>
+                                            <option value="Compost Orgánico">Compost Orgánico</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="sim-form-group">
+                                        <label>Ubicación / Dirección</label>
+                                        <input type="text" id="sim-input-location" placeholder="Ej: Carrera 45 # 12-30" value="Entrada Principal Biblioteca Central">
+                                    </div>
+
+                                    <div class="sim-form-group">
+                                        <label>Descripción Detallada</label>
+                                        <textarea id="sim-input-description" rows="2" placeholder="Describe la situación...">Punto de acopio especial habilitado para desecho seguro de pilas alcalinas y placas electrónicas.</textarea>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-block" id="sim-btn-submit-report">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+                                            <path d="M12 12v9"/><path d="m16 16-4-4-4 4"/>
+                                        </svg>
+                                        Enviar Eco-Reporte
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Screen 3: Login Tab -->
+                            <div class="sim-screen-view" id="sim-view-login">
+                                <div class="sim-auth-box">
+                                    <div class="auth-icon-circle">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Bienvenido a EcoTrack</h3>
+                                    <p class="auth-sub">Inicia sesión con credenciales seguras mediante Firebase Auth</p>
+
+                                    <div class="sim-form-group">
+                                        <label>Correo Electrónico</label>
+                                        <input type="email" value="ciudadano@ucn.edu.co" readonly>
+                                    </div>
+                                    <div class="sim-form-group">
+                                        <label>Contraseña</label>
+                                        <input type="password" value="••••••••••••" readonly>
+                                    </div>
+                                    <button class="btn btn-primary btn-block" id="sim-btn-auth-demo">
+                                        Sesión Activa (JWT)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Floating Action Hint -->
+                            <div class="sim-bottom-hint">
+                                <span>💡 Haz clic en los chips o en los estados para interactuar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem vs Solution Comparison Section -->
+        <section class="comparison-section" id="problema-solucion">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Metodología Lean Mobile</span>
+                    <h2 class="section-title">El Fracaso Burocrático Tradicional vs. EcoTrack</h2>
+                    <p class="section-subtitle">¿Por qué las quejas ambientales ciudadanas se abandonan en más del 65%?</p>
+                </div>
+
+                <div class="comparison-grid">
+                    <!-- Traditional System Card -->
+                    <div class="comparison-card traditional">
+                        <div class="card-badge red">Mecanismo Municipal Tradicional</div>
+                        <h3>Portales Web de PQR Burocráticos</h3>
+                        <ul class="comparison-list">
+                            <li>
+                                <svg class="list-icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                <span><strong>Formularios de 15+ campos:</strong> Registro tedioso pensado para escritorios con abandono masivo.</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                <span><strong>Semanas sin respuesta:</strong> Canales opacos sin trazabilidad en tiempo real para el vecino.</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                <span><strong>Desconexión comunitaria:</strong> Los reportes quedan en silos administrativos inaccesibles para el barrio.</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                <span><strong>Inoperante sin señal:</strong> Pérdida total de datos al intentar reportar en zonas de baja cobertura.</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer-metric">
+                            <span class="metric-bad">&gt; 12 minutos</span>
+                            <span class="label">Tiempo invertido por reporte frustrado</span>
+                        </div>
+                    </div>
+
+                    <!-- EcoTrack Solution Card -->
+                    <div class="comparison-card ecotrack">
+                        <div class="card-badge green">Solución Lean EcoTrack</div>
+                        <h3>Telemetría Móvil Reactiva en 3 Toques</h3>
+                        <ul class="comparison-list">
+                            <li>
+                                <svg class="list-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span><strong>Registro en &lt; 30 segundos:</strong> 3 pasos simples con categorización y georreferenciación fluida.</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span><strong>Sincronización Cloud Sub-Segundo:</strong> Difusión inmediata mediante Firestore Snapshot Listeners.</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span><strong>Transparencia Social Total:</strong> Ciclo visible (Pendiente $\rightarrow$ En Revisión $\rightarrow$ Resuelto).</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span><strong>Persistencia Offline Integrada:</strong> Guarda en cola local y sincroniza automáticamente al reconectar.</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer-metric">
+                            <span class="metric-good">&lt; 30 segundos</span>
+                            <span class="label">Tiempo de registro con adopción 4x superior</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase Grid -->
+        <section class="features-section" id="caracteristicas">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Capacidades del Sistema</span>
+                    <h2 class="section-title">Diseñado para la Acción Ecológica Inmediata</h2>
+                    <p class="section-subtitle">Arquitectura reactiva en Android nativo y Google Firebase para máximo rendimiento en campo.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h3>Transmisión Cloud en Milisegundos</h3>
+                        <p>Aprovechamiento de Kotlin Coroutines y <code>callbackFlow</code> gRPC para transmitir actualizaciones en tiempo real sin sondeo periódico (polling).</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Puntos Limpios &amp; Geolocalización</h3>
+                        <p>Catálogo comunitario de estaciones de reciclaje de baterías, plásticos, residuos electrónicos y desechos orgánicos clasificados.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                            </svg>
+                        </div>
+                        <h3>Seguridad Criptográfica JWT</h3>
+                        <p>Identidad ciudadana federada con tokens firmados vía Firebase Auth y reglas declarativas que validan esquemas en el servidor.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper amber">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 10h20"/><path d="m4.93 19.07 4.24-4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 9.17-4.24-4.24"/><circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Trazabilidad de Estados Dinámicos</h3>
+                        <p>Progreso visible en tres etapas: <strong>Pendiente</strong>, <strong>En Revisión</strong> y <strong>Resuelto</strong>, fomentando auditoría comunitaria y seguimiento vecinal.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Modo Offline con Caché Local</h3>
+                        <p>Persistencia local nativa de Cloud Firestore que permite documentar anomalías en zonas sin señal y subirlas al recuperar conexión.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper rose">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 9.17-4.24-4.24"/>
+                            </svg>
+                        </div>
+                        <h3>Flujo Unidireccional UDF</h3>
+                        <p>Material Design 3 y Clean Architecture garantizan interfaces predictivas, reactivas y sin inconsistencias de estado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Eco-Impact Calculator Section -->
+        <section class="calculator-section" id="calculadora">
+            <div class="section-container">
+                <div class="calculator-wrapper">
+                    <div class="calc-header">
+                        <span class="section-tag">Herramienta Interactiva</span>
+                        <h2 class="section-title">Calculadora de Impacto Comunitario</h2>
+                        <p class="section-subtitle">Simula el impacto de adoptar EcoTrack en tu vecindario o comuna universitaria.</p>
+                    </div>
+
+                    <div class="calc-card">
+                        <div class="calc-slider-block">
+                            <div class="slider-header">
+                                <label for="citizen-slider" class="slider-title">Vecinos y Ciudadanos Activos:</label>
+                                <span class="slider-count" id="calc-citizen-display">350</span>
+                            </div>
+                            <input type="range" id="citizen-slider" min="20" max="2500" value="350" step="10" class="range-slider">
+                            <div class="slider-range-labels">
+                                <span>20 personas</span>
+                                <span>500</span>
+                                <span>1,200</span>
+                                <span>2,500 personas</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-results-grid">
+                            <div class="calc-metric-card">
+                                <div class="metric-icon">♻️</div>
+                                <div class="metric-num" id="calc-waste-num">8,400</div>
+                                <div class="metric-unit">Kg Residuos Reciclados / Mes</div>
+                                <p class="metric-explanation">Material desviado con éxito de rellenos sanitarios.</p>
+                            </div>
+
+                            <div class="calc-metric-card">
+                                <div class="metric-icon">🌱</div>
+                                <div class="metric-num" id="calc-co2-num">6,300</div>
+                                <div class="metric-unit">Kg CO₂ Evitados / Mes</div>
+                                <p class="metric-explanation">Equivalente a plantar 280 árboles nativos adultos.</p>
+                            </div>
+
+                            <div class="calc-metric-card">
+                                <div class="metric-icon">🧹</div>
+                                <div class="metric-num" id="calc-cleaned-num">11</div>
+                                <div class="metric-unit">Micro-Vertederos Saneados / Trimestre</div>
+                                <p class="metric-explanation">Intervención temprana gracias a alertas tempranas.</p>
+                            </div>
+
+                            <div class="calc-metric-card">
+                                <div class="metric-icon">⚡</div>
+                                <div class="metric-num" id="calc-time-num">1,575</div>
+                                <div class="metric-unit">Horas Burocráticas Ahorradas</div>
+                                <p class="metric-explanation">Ahorro en trámites frente a ventanillas tradicionales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture Visualizer Section -->
+        <section class="architecture-section" id="arquitectura">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Ingeniería de Software</span>
+                    <h2 class="section-title">Arquitectura Serverless Reactiva</h2>
+                    <p class="section-subtitle">Haz clic en cada componente para inspeccionar su rol técnico dentro de la plataforma.</p>
+                </div>
+
+                <!-- Interactive Architecture Flow Diagram -->
+                <div class="architecture-diagram-grid">
+                    <!-- Component 1: Android Client -->
+                    <div class="arch-block" data-component="client">
+                        <div class="arch-tag">Cliente Android</div>
+                        <h4>Jetpack Compose + MVVM</h4>
+                        <p>UI declarativa con Material Design 3, corrutinas de Kotlin y contratos de repositorio desacoplados.</p>
+                        <span class="arch-badge">Kotlin 2.0</span>
+                    </div>
+
+                    <div class="arch-connector">
+                        <span>gRPC / JWT</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <!-- Component 2: Firebase Auth -->
+                    <div class="arch-block" data-component="auth">
+                        <div class="arch-tag">Capa de Identidad</div>
+                        <h4>Firebase Authentication</h4>
+                        <p>Validación criptográfica JWT (RFC 7519) con renovación silenciosa en Google Play Services.</p>
+                        <span class="arch-badge">Tokens JWT</span>
+                    </div>
+
+                    <div class="arch-connector">
+                        <span>Snapshot Listeners</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <!-- Component 3: Cloud Firestore -->
+                    <div class="arch-block" data-component="firestore">
+                        <div class="arch-tag">Base de Datos NoSQL</div>
+                        <h4>Cloud Firestore Distribuido</h4>
+                        <p>Almacenamiento orientado a documentos con sharding multi-región y reglas declarativas de seguridad.</p>
+                        <span class="arch-badge">NoSQL Real-Time</span>
+                    </div>
+
+                    <div class="arch-connector">
+                        <span>Event Triggers</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <!-- Component 4: Cloud Extensions -->
+                    <div class="arch-block" data-component="extensions">
+                        <div class="arch-tag">Extensibilidad Serverless</div>
+                        <h4>Functions &amp; ML Kit</h4>
+                        <p>Ruta de escalamiento para alertas a cuadrillas municipales y clasificación on-device con Edge AI.</p>
+                        <span class="arch-badge">Cloud Functions</span>
+                    </div>
+                </div>
+
+                <!-- Architecture Details Modal / Card -->
+                <div class="arch-detail-card" id="arch-detail-card">
+                    <h4 id="arch-detail-title">💡 Selecciona un bloque superior</h4>
+                    <p id="arch-detail-body">Toca cualquiera de los bloques arquitectónicos para visualizar su justificación técnica, patrones de diseño y tecnologías empleadas.</p>
+                </div>
+
+                <!-- Tech Badges Carousel / Grid -->
+                <div class="tech-pills-row">
+                    <span class="tech-pill">🤖 Android SDK 34</span>
+                    <span class="tech-pill">💜 Kotlin 2.0.0</span>
+                    <span class="tech-pill">🎨 Jetpack Compose M3</span>
+                    <span class="tech-pill">🔥 Firebase Auth</span>
+                    <span class="tech-pill">⚡ Cloud Firestore</span>
+                    <span class="tech-pill">🐘 Gradle 8.6</span>
+                    <span class="tech-pill">🔄 StateFlow &amp; Coroutines</span>
+                    <span class="tech-pill">🏛️ Clean Architecture</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic & Research Seedbed Section -->
+        <section class="academic-section" id="semillero">
+            <div class="section-container">
+                <div class="academic-banner-card">
+                    <div class="academic-content">
+                        <span class="section-tag">Fundación Universitaria Católica del Norte</span>
+                        <h2>Semillero de Investigación en Computación Móvil</h2>
+                        <p>
+                            EcoTrack ha sido formulado como proyecto de ingeniería aplicada en la cátedra de <strong>Diseño de Aplicaciones Móviles (Semestre 4)</strong> para comprobar cómo la metodología Lean Mobile combate la apatía comunitaria.
+                        </p>
+
+                        <div class="research-vectors-grid">
+                            <div class="vector-card">
+                                <div class="vector-number">01</div>
+                                <h4>Edge AI &amp; Visión Artificial</h4>
+                                <p>Implementación de redes neuronales convolucionales con TensorFlow Lite para clasificar residuos plásticos, electrónicos y orgánicos directamente en la cámara.</p>
+                            </div>
+
+                            <div class="vector-card">
+                                <div class="vector-number">02</div>
+                                <h4>Clustering Geoespacial GIS</h4>
+                                <p>Algoritmos de agrupamiento espacial basados en densidad (DBSCAN) para predecir puntos críticos de acumulación clandestina de basuras.</p>
+                            </div>
+
+                            <div class="vector-card">
+                                <div class="vector-number">03</div>
+                                <h4>Integración Smart Cities</h4>
+                                <p>Despacho automatizado mediante webhooks a empresas de aseo y servicios públicos metropolitanos.</p>
+                            </div>
+                        </div>
+
+                        <div class="academic-meta-footer">
+                            <div class="meta-item">
+                                <span class="label">Institución</span>
+                                <span class="val">UCN - Católica del Norte</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Metodología</span>
+                                <span class="val">Lean Mobile (Eric Ries)</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Documentación Técnica</span>
+                                <a href="../README.md" class="val-link">Ver README.md en Español</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Preguntas Frecuentes</span>
+                    <h2 class="section-title">Respuestas Técnicas y Operativas</h2>
+                    <p class="section-subtitle">Todo lo necesario para comprender, evaluar y ejecutar EcoTrack.</p>
+                </div>
+
+                <div class="faq-accordion" id="faq-accordion">
+                    <!-- Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Cómo se ejecuta el proyecto en Android Studio?</span>
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Basta con clonar el repositorio, colocar el archivo <code>google-services.json</code> en el directorio <code>app/</code>, abrir el proyecto en Android Studio (Koala 2024.1.1 o superior con JDK 17) y presionar <strong>Run 'app'</strong>. La guía paso a paso completa está detallada en el archivo <a href="../README.md#4-guía-de-instalación-y-despliegue-en-android-studio">README.md</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Qué compatibilidad de versiones de Android ofrece?</span>
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>EcoTrack está compilado para <strong>SDK 34 (Android 14)</strong> con soporte mínimo garantizado desde <strong>Android 7.0 (API Nivel 24)</strong>, abarcando más del 95% de los smartphones Android en circulación activa.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Cómo funciona el soporte fuera de línea (offline)?</span>
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Cloud Firestore habilita persistencia de disco en el cliente. Si un ciudadano se encuentra en una zona rural o sin cobertura celular, el eco-reporte se almacena en la cola local de escrituras y se sube automáticamente tan pronto el dispositivo restablece conexión.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Por qué se eligió Firebase en lugar de una API REST tradicional?</span>
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Bajo la metodología Lean Mobile, aprovisionar servidores monolíticos con Docker, bases de datos SQL y gestión manual de WebSockets eleva los costos y tiempos de desarrollo. Firebase BaaS provee listeners reactivos en tiempo real, autenticación segura y persistencia nativa con costo cero de mantenimiento fijo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-icon small">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Eco<span>Track</span></span>
+                <p class="footer-desc">
+                    Plataforma de Telemetría Ambiental Ciudadana desarrollada para la Fundación Universitaria Católica del Norte (UCN).
+                </p>
+            </div>
+
+            <div class="footer-links-col">
+                <h5>Documentación</h5>
+                <ul>
+                    <li><a href="../README.md">README en Español</a></li>
+                    <li><a href="../docs/ARCHITECTURE.md">Arquitectura del Sistema</a></li>
+                    <li><a href="../docs/PRESENTATION_SLIDES.md">Diapositivas Académicas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h5>Tecnologías</h5>
+                <ul>
+                    <li><a href="https://kotlinlang.org" target="_blank" rel="noopener">Kotlin 2.0</a></li>
+                    <li><a href="https://developer.android.com/jetpack/compose" target="_blank" rel="noopener">Jetpack Compose M3</a></li>
+                    <li><a href="https://firebase.google.com" target="_blank" rel="noopener">Google Firebase BaaS</a></li>
+                    <li><a href="https://www.ucn.edu.co" target="_blank" rel="noopener">UCN Católica del Norte</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 EcoTrack · Proyecto Académico y Semillero de Investigación UCN. Licencia Educativa Abierta.</p>
+                <a href="#inicio" class="back-to-top" id="back-to-top" title="Volver al inicio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

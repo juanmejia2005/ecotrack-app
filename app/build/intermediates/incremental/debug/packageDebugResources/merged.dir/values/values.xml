@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EcoTrack</string>
+    <string name="gcm_defaultSenderId" translatable="false">431198055433</string>
+    <string name="google_api_key" translatable="false">AIzaSyDszKT1fKWwxBMjms0W7TXOV1_zUQk3u2A</string>
+    <string name="google_app_id" translatable="false">1:431198055433:android:0edab581186ecfac95dcd8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDszKT1fKWwxBMjms0W7TXOV1_zUQk3u2A</string>
+    <string name="google_storage_bucket" translatable="false">ecotrack-app-f5679.firebasestorage.app</string>
+    <string name="login_subtitle">Track, Report, and Preserve our Urban Ecology</string>
+    <string name="login_title">Welcome to EcoTrack</string>
+    <string name="project_id" translatable="false">ecotrack-app-f5679</string>
+</resources>
