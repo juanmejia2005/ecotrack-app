@@ -12,7 +12,9 @@
 </p>
 
 ---
-
+## Entregables
+1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio
+2. 
 ## Resumen Ejecutivo
 
 **EcoTrack** es una solución móvil de alta fiabilidad concebida como **Producto Mínimo Viable (MVP)** bajo los principios de la **Metodología Lean Mobile**, orientada a la evaluación académica y la incubación en el semillero de investigación de la **Fundación Universitaria Católica del Norte (UCN)**. 
