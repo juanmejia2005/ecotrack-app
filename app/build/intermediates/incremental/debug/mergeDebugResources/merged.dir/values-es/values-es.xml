@@ -2,6 +2,19 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string msgid="8397015543330865059" name="android.credentials.TYPE_PASSWORD_CREDENTIAL">"Contraseña"</string>
     <string msgid="3929015085059320822" name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">"Llave de acceso"</string>
+    <string name="app_name">EcoTrack</string>
+    <string name="auth_btn_register">Registrarse</string>
+    <string name="auth_btn_sign_in">Iniciar Sesión</string>
+    <string name="auth_create_account_subtitle">Únete al monitoreo ambiental ciudadano</string>
+    <string name="auth_create_account_title">Crear Cuenta</string>
+    <string name="auth_email_label">Correo Electrónico</string>
+    <string name="auth_error_failed">Error en la autenticación. Verifica tus datos.</string>
+    <string name="auth_error_missing_fields">Por favor ingresa tanto el correo como la contraseña.</string>
+    <string name="auth_error_password_length">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="auth_password_label">Contraseña (mín. 6 caracteres)</string>
+    <string name="auth_sign_in_subtitle">Inicia sesión para registrar y consultar eco-puntos</string>
+    <string name="auth_toggle_to_register">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="auth_toggle_to_sign_in">¿Ya tienes una cuenta? Inicia Sesión</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"Responder"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Vídeo"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"Rechazar"</string>
@@ -9,6 +22,12 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Llamada entrante"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Llamada en curso"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Filtrando una llamada entrante"</string>
+    <string name="category_all">Todos</string>
+    <string name="category_electronic_waste">Residuos Electrónicos</string>
+    <string name="category_general_waste">Basura General</string>
+    <string name="category_illegal_dumping">Vertedero Ilegal</string>
+    <string name="category_organic_compost">Compost Orgánico</string>
+    <string name="category_recycling_station">Puntos de Reciclaje</string>
     <string msgid="406453423630273620" name="close_drawer">"Cerrar menú de navegación"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Cerrar hoja"</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Habilitar</string>
@@ -30,6 +49,26 @@
     <string name="common_signin_button_text">Iniciar sesión</string>
     <string name="common_signin_button_text_long">Iniciar sesión con Google</string>
     <string msgid="3260749812566568062" name="copy_toast_msg">"Enlace copiado en el portapapeles"</string>
+    <string name="create_report_btn_submit">Enviar Eco-Reporte</string>
+    <string name="create_report_error_empty_fields">Por favor completa todos los campos obligatorios.</string>
+    <string name="create_report_error_submission_failed">No se pudo enviar el eco-reporte. Intenta nuevamente.</string>
+    <string name="create_report_info_banner">Tu reporte se sincronizará en tiempo real con brigadas de limpieza y redes de reciclaje comunitario.</string>
+    <string name="create_report_label_category">Categoría</string>
+    <string name="create_report_label_description">Descripción Detallada</string>
+    <string name="create_report_label_location">Ubicación / Dirección</string>
+    <string name="create_report_label_title">Título del Reporte</string>
+    <string name="create_report_placeholder_description">Describe el estado actual, accesibilidad o nivel de urgencia...</string>
+    <string name="create_report_placeholder_location">Ej: Parque Central Puerta Este / Cra 45 # 12-30</string>
+    <string name="create_report_placeholder_title">Ej: Contenedor desbordado / Nuevo punto de baterías</string>
+    <string name="create_report_screen_title">Reportar Incidente / Eco-Punto</string>
+    <string name="dashboard_add_report">Crear Eco-Reporte</string>
+    <string name="dashboard_by_anonymous">Por: Anónimo</string>
+    <string name="dashboard_by_prefix">Por: %1$s</string>
+    <string name="dashboard_citizen_prefix">Ciudadano: %1$s</string>
+    <string name="dashboard_empty_subtitle">¡Sé el primero en reportar un punto de reciclaje o una anomalía ambiental cercana!</string>
+    <string name="dashboard_empty_title">No se encontraron eco-reportes</string>
+    <string name="dashboard_sign_out">Cerrar Sesión</string>
+    <string name="dashboard_title">Panel EcoTrack</string>
     <string msgid="8038256446254964252" name="default_error_message">"Entrada no válida"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Ventana emergente"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Menú desplegable"</string>
@@ -38,6 +77,8 @@
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Compartir enlace"</string>
     <string msgid="6827826412747255547" name="in_progress">"En curso"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Marcado parcialmente"</string>
+    <string name="login_subtitle">Monitorea, reporta y preserva la ecología urbana</string>
+    <string name="login_title">Bienvenido a EcoTrack</string>
     <string msgid="2988463736136100848" name="m3c_bottom_sheet_collapse_description">"Contrae la hoja inferior"</string>
     <string msgid="1555567894577437024" name="m3c_bottom_sheet_dismiss_description">"Cierra la hoja inferior"</string>
     <string msgid="8403354765404029791" name="m3c_bottom_sheet_drag_handle_description">"Controlador de arrastre"</string>
@@ -104,6 +145,9 @@
     <string msgid="5834637030682409883" name="state_off">"Desactivado"</string>
     <string msgid="1490883874751719580" name="state_on">"Activado"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="status_in_review">En Revisión</string>
+    <string name="status_pending">Pendiente</string>
+    <string name="status_resolved">Resuelto</string>
     <string msgid="2561197295334830845" name="switch_role">"Interruptor"</string>
     <string msgid="1672349317127674378" name="tab">"Pestaña"</string>
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> por cien."</string>

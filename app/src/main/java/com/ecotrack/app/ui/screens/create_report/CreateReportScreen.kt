@@ -18,9 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ecotrack.app.ui.theme.EcoBackgroundLight
-import com.ecotrack.app.ui.theme.EcoGreenLight
-import com.ecotrack.app.ui.theme.EcoGreenPrimary
+import com.ecotrack.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

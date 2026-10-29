@@ -21,8 +21,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ecotrack.app.ui.theme.EcoGreenDark
-import com.ecotrack.app.ui.theme.EcoGreenPrimary
+import com.ecotrack.app.ui.theme.*
 
 /**
  * Authentication Screen providing user onboarding, sign-in, and account registration.
