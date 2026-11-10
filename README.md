@@ -13,7 +13,7 @@
 
 ---
 ## Entregables
-1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio
+1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio 
 
 ## Realizado por:
 Juan Manuel Mejia Grajales
@@ -23,7 +23,7 @@ DISEÑO DE APLICACIONES PARA MÓVILES
 
 ## Introducción
 
-**EcoTrack** es una solución móvil de alta fiabilidad concebida como **Producto Mínimo Viable (MVP)** bajo los principios de la **Metodología Lean Mobile**, orientada a la evaluación académica y la incubación en el semillero de investigación de la **Fundación Universitaria Católica del Norte (UCN)**. 
+**EcoTrack** es una solución móvil de alta fiabilidad concebida como **Producto Mínimo Viable (MVP)** bajo los principios de la **Metodología Lean Mobile**, orientada a la evaluación académica de la **Fundación Universitaria Católica del Norte (UCN)**. 
 
 La plataforma resuelve la asimetría de información entre las comunidades urbanas y los sistemas municipales de saneamiento y gestión ambiental. Mediante la integración de ingeniería moderna en el cliente Android (**Kotlin 2.0**, **Jetpack Compose con Material Design 3**, arquitectura **MVVM** y flujo unidireccional de datos **UDF**) junto con una infraestructura serverless en la nube (**Google Firebase Authentication** y **Cloud Firestore**), EcoTrack faculta a los ciudadanos para geolocalizar, reportar y verificar incidentes de residuos clandestinos o puntos limpios de reciclaje con sincronización en milisegundos.
 
