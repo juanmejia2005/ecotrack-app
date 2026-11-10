@@ -14,8 +14,14 @@
 ---
 ## Entregables
 1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio
-2. 
-## Resumen Ejecutivo
+
+## Realizado por:
+Juan Manuel Mejia Grajales
+
+## Curso:
+DISEÑO DE APLICACIONES PARA MÓVILES
+
+## Introducción
 
 **EcoTrack** es una solución móvil de alta fiabilidad concebida como **Producto Mínimo Viable (MVP)** bajo los principios de la **Metodología Lean Mobile**, orientada a la evaluación académica y la incubación en el semillero de investigación de la **Fundación Universitaria Católica del Norte (UCN)**. 
 
@@ -340,13 +346,11 @@ A continuación se disponen los marcadores de posición estandarizados para adju
 
 ---
 
-## 8. Autores y Reconocimientos Académicos
+## 8. Reconocimientos Académicos
 
 * **Institución**: Fundación Universitaria Católica del Norte (UCN)
-* **Programa Académico**: Ingeniería de Software / Informática
+* **Programa Académico**: Desarrollo de Software
 * **Asignatura**: Diseño de Aplicaciones Móviles (Semestre 4)
-* **Marco Metodológico**: Lean Mobile Software Development (Eric Ries / Patrones UDF Android)
-* **Rol del Desarrollador**: Ingeniero de Software / Arquitecto de Soluciones Móviles
 
 ---
 *EcoTrack — Empoderando a las comunidades para monitorear, reportar y preservar la ecología urbana.*
