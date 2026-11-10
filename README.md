@@ -13,7 +13,8 @@
 
 ---
 ## Entregables
-1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio 
+1. Enlace landing page: https://juanmejia2005.github.io/ecotrack-app/landing/index.html#inicio
+2. Enlace video sustentación: https://youtu.be/qJc8QGiERJo 
 
 ## Realizado por:
 Juan Manuel Mejia Grajales
